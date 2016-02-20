@@ -1,7 +1,14 @@
 require(dplyr)
 require(tidyr)
-coal <- SCC %>% filter(grepl('Combustion', SCC.Level.One)) %>%
+require(ggplot2)
+source("getdata.R")
+coallist <- SCC %>% filter(grepl('Combustion', SCC.Level.One)) %>%
         filter(grepl('Coal', SCC.Level.Three))
 coal <- coallist$SCC
-#plot4data <- NEI %>% filter(grepl(coal, SCC)) %>% group_by(year) %>%
-#        summarise(Emissions = sum(Emissions))
+png("Plot4.png")
+plot4data <- NEI %>% subset(SCC %in% coal) %>% group_by(year) %>%
+       summarise(Emissions = sum(Emissions))
+print (qplot(year, Emissions, data = plot4data,
+            geom = c("point", "line"), ylab = "Emissions in tons",
+            main = "US Coal Combustion-Related Emission"))
+dev.off()
