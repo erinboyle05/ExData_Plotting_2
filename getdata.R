@@ -1,5 +1,5 @@
-# This file downloads the data from the web and only stores data
-# from 2007-02-01 to 2007-02-02
+#This script downloads and prepares the necessary data files.
+#If any of the files or datasets exist, that portion of script will not run. 
 
 if (!file.exists("NEI_data.zip")) {
         
