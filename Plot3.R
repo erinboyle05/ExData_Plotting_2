@@ -17,6 +17,6 @@ plot3data$type <- as.factor(plot3data$type)
 #Create plot and plot graphic file
 png("Plot3.png")
 print (qplot(year, Emissions, data = plot3data, color = type,
-             geom = c("point", "line"), ylab = "Emissions in tons",
+             geom = c("point", "line"), ylab = "Emissions (in tons)",
              main = "PM2.5 Emissions in Baltimore City"))
 dev.off()

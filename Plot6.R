@@ -24,6 +24,6 @@ plot6data$fips <- gsub("06037", "Los Angeles County, California", plot6data$fips
 #Create plot and plot graphic file
 png("Plot6.png")
 print (qplot(year, Emissions, data = plot6data, color = fips,
-             geom = c("point", "line"), ylab = "Emissions in tons",
-             main = "PM2.5 Emissions"))
+             geom = c("point", "line"), ylab = "Emissions (in tons)",
+             main = "PM2.5 Emissions from Motor Vehicles"))
 dev.off()

@@ -20,6 +20,6 @@ plot5data <- NEI %>% filter(fips == "24510") %>%
 #Create plot and plot graphic file
 png("Plot5.png")
 print (qplot(year, Emissions, data = plot5data,
-            geom = c("point", "line"), ylab = "Emissions in tons",
+            geom = c("point", "line"), ylab = "Emissions (in tons)",
             main = "Emissions by Motor Vehicles in Baltimore City"))
 dev.off()

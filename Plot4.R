@@ -19,6 +19,6 @@ png("Plot4.png")
 plot4data <- NEI %>% subset(SCC %in% coal) %>% group_by(year) %>%
        summarise(Emissions = sum(Emissions))
 print (qplot(year, Emissions, data = plot4data,
-            geom = c("point", "line"), ylab = "Emissions in tons",
+            geom = c("point", "line"), ylab = "Emissions (in tons)",
             main = "US Coal Combustion-Related Emission"))
 dev.off()

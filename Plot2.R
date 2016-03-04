@@ -14,5 +14,5 @@ plot2data <- NEI %>% filter(fips == "24510") %>% group_by(year) %>% summarise(su
 #Create plot and plot graphic file
 png("Plot2.png")
 plot(plot2data$year, plot2data$`sum(Emissions)`, type = "o",
-     main = "Total PM2.5 Emissions", sub = "for Baltimore City, Maryland", xlab = "Year", ylab = "Total Emission (in tons)")
+     main = "Total PM2.5 Emissions for Baltimore City, Maryland", xlab = "Year", ylab = "Total Emission (in tons)")
 dev.off()
